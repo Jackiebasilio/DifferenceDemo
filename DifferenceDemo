@@ -1,0 +1,85 @@
+package myClass;
+
+import java.util.ArrayList;
+
+public class DifferenceDemo {
+
+	
+	public static void main(String[] args) {
+		// 1. Arrays: Fixed size, can hold primitives or objects
+		// Declare and initialize an array of integers with fixed size 5
+		int[] intArray = new int[5];
+		
+		
+		// Assign values to array elements by index
+		intArray[0] = 10;
+		intArray[1] = 20;
+		intArray[2] = 30;
+		intArray[3] = 40;
+		intArray[4] = 50;
+		
+		
+		//Trying to add more elements than size causes ArrayIndexOutOfBoundsException
+		//intArray[5] = 60; // This would cause an error
+		
+		
+		System.out.println("Array contents: ");
+		for (int i = 0; i < intArray.length; i++) {
+			System.out.println("Index " + i + ": " + intArray[i]);
+		}
+		
+		
+		// 2. ArrayList: Dynamic size, can only hold objects (not primitives directly)
+		// Use Integer wrapper class for int values
+		ArrayList<Integer> intList = new ArrayList<>();
+		
+		
+		// Add elements dynamically without worrying about size
+		intList.add(10);
+		intList.add(20);
+		intList.add(30);
+		intList.add(40);
+		intList.add(50);
+		intList.add(60); // No problem adding more elements
+		
+		
+		System.out.print("\nArrayList contents:");
+		for (int i = 0; i < intList.size(); i++) {
+			System.out.println("Index " + i + ": " + intList.get(i));
+		}
+		
+		// 3. Demonstrate removing elements from ArrayList (not possible with arrays)
+		intList.remove(2); // Remove element at index 2 (value 30)
+		
+		
+		System.out.println("\nArrayList after removing element at index 2:");
+		for (int i = 0; i < intList.size(); i++) {
+			System.out.println("Index " + i + ": " + intList.get(i));
+		}
+		
+		
+		// 4. Arrays have better performance for fixed-size data, but less flexible
+		// ArrayLists provide many useful methods like add, remove, contains, etc.
+		
+		
+		// 5. Arrays can hold primitives directly, ArrayLists require wrapper classes for primitives
+		//Example: int[] vs ArrayList<Integer>
+		
+		
+		// 6. Arrays have a length property, ArrayLists have size() method
+		
+		System.out.println("\nArray length: " + intArray.length);
+		System.out.println("ArrayList size: " + intList.size());
+		
+		
+		// 7. Arrays can be multi-dimentional, ArrayList can be nested but more complex
+		
+		
+		//Summary:
+		System.out.println("\nSummary of differences:");
+		System.out.println("- Arrays have fixed size, ArrayLists are dynamic. ");
+		System.out.println("-Array can hold primitives, ArrayLists hold objects. ");
+		System.out.println("-ArrayLists probide many built-in methods for monipulation. ");
+		System.out.println("- Arrays have better performance for fixed-size data.");
+	}
+}	
